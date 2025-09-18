@@ -60,10 +60,10 @@ python examples/research/check/trainer.py --task OfflineSwimmerVelocityGymnasium
 ```
 ## Debug
 Incase DSRL throws the following error: PermissionError: [Errno 13] Permission denied: '/home/...'
-'''bash
+```bash
 export DSRL_DATASET_DIR="path"
 mkdir -p "path"
-'''
+```
 Incase you face other issues while running the training script due to dataset issues, please refer to https://github.com/liuzuxin/DSRL
 We have also uploaded the datasets online (https://limewire.com/d/R3dC5#8sa8LzaziD). You can manually move them into DSRL_DATASET_DIR
 
