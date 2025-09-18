@@ -17,7 +17,5 @@
     "train_dynamics": true,
     "dt": 0.1,
     "num_action": 2,
-    "state_dim": 8,
-    "best_safe acc": 0.758169686794281,
-    "best_unsafe_acc": 0.974375969171524
+    "state_dim": 8
 }
