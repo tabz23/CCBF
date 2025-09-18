@@ -17,7 +17,6 @@ dependencies:
   - debugpy=1.8.11
   - decorator=5.1.1
   - dsdp=5.8
-  - ecos=2.0.8
   - exceptiongroup=1.2.2
   - executing=2.1.0
   - fftw=3.3.10
