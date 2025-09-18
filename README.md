@@ -22,7 +22,7 @@ conda activate CCBF
 ### Step 3: Verify Installation
 ```bash
 # Test that key packages are installed correctly
-python -c "import torch; import gymnasium; import cvxpy; print('Installation successful!')"
+python -c 'import torch; import gymnasium; import cvxpy; print("Installation successful!")'
 ```
 
 
