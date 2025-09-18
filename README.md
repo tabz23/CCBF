@@ -17,6 +17,7 @@ conda env create -f environment.yml
 
 # Activate the environment
 conda activate CCBF
+pip install -e .
 ```
 
 ### Step 3: Verify Installation
@@ -29,14 +30,33 @@ python -c 'import torch; import gymnasium; import cvxpy; print("Installation suc
 
 ## Reproduce paper results
 ```bash
-# Example command to run training (adjust as needed)
-python train_ccbf.py --env_name SafetyPointGoal1-v0 --epochs 100 --lr 0.001
+# Hopper BC
+python "examples/research/check/hopper_random/eval_bc_cbf_modif_list.py" --path "logs/OfflineHopperVelocityGymnasium-v1-cost-20/BC-all_cost20_seed10-0912"  --eval_episode 20 --device cpu
+# Hopper BC-Safe
+python "examples/research/check/hopper_random/eval_bc_cbf_modif_list.py" --path "logs/OfflineHopperVelocityGymnasium-v1-cost-20/BC-safe_bc_modesafe_cost20_seed20-70bc" --eval_episode 20 --device cpu
+# Hopper BCQL
+python "examples/research/check/hopper_random/eval_bcql_modif_list.py" --path "logs/OfflineHopperVelocityGymnasium-v1-cost-20/BCQL_cost20_seed20-257f" --eval_episodes 20  --device cpu
+# Hopper BEARL
+python "examples/research/check/hopper_random/eval_bearl_modif_list.py" --path "logs/OfflineHopperVelocityGymnasium-v1-cost-20/BEARL_cost20-7857" --eval_episodes 20  --device cpu
+# Hopper COptiDICE
+python "examples/research/check/hopper_random/eval_coptidice_modif_list.py" --path "logs/OfflineHopperVelocityGymnasium-v1-cost-20/COptiDICE_cost20_seed20-37f3"  --eval_episodes 20  --device cpu
+
+# Swimmer BC
+python "examples/research/check/swimmer_random/eval_bc_cbf_modif_list.py" --device="mps" --path "logs/OfflineSwimmerVelocityGymnasium-v1-cost-20/BC-all_cost20-d567/BC-all_cost20-d567"  --eval_episode 20 --device cpu
+# Swimmer BC-Safe
+python "examples/research/check/swimmer_random/eval_bc_cbf_modif_list.py" --device="mps" --path "logs/OfflineSwimmerVelocityGymnasium-v1-cost-20/BC-safe_bc_modesafe_cost20_seed20-2180/BC-safe_bc_modesafe_cost20_seed20-2180" --eval_episode 20 --device cpu
+# Swimmer BCQL
+python "examples/research/check/swimmer_random/eval_bcql_modif_list.py" --path "logs/OfflineSwimmerVelocityGymnasium-v1-cost-20/BCQL_cost20_seed20-b8c5/BCQL_cost20_seed20-b8c5" --eval_episodes 20
+# Swimmer BEARL
+python "examples/research/check/swimmer_random/eval_bearl_modif_list.py" --path "logs/OfflineSwimmerVelocityGymnasium-v1-cost-20/BEARL_cost20_seed10-f1fd/BEARL_cost20_seed10-f1fd" --eval_episodes 20
+# Swimmer COptiDICE
+python "examples/research/check/Swimmer_random/eval_coptidice_modif_list.py" --path "logs/OfflineSwimmerVelocityGymnasium-v1-cost-20/COptiDICE_cost20-3187/COptiDICE_cost20-3187" --eval_episodes 20
 ```
 
-## Train CCBF in hopper and Swimmer
+## Train CCBF in Hopper and Swimmer
 ```bash
-# Example command to run training (adjust as needed)
-python train_ccbf.py --env_name SafetyPointGoal1-v0 --epochs 100 --lr 0.001
+python examples/research/check/trainer.py --task OfflineHopperVelocityGymnasium-v1  --device="cuda" --cql 0.1 --temp 1 --detach True --batch_size 256  --num_action_samples_cql 10 --seed 7 --train_steps 50000 --w_grad 2
+python examples/research/check/trainer.py --task OfflineSwimmerVelocityGymnasium-v1  -device="cuda" --cql 1 --temp 1 --detach True --batch_size 256 - --num_action_samples_cql 10 --seed 7 --w_grad 2 --train_steps 15000
 ```
 ## Debug
 Incase DSRL throws the following error: PermissionError: [Errno 13] Permission denied: '/home/...'
@@ -44,15 +64,16 @@ Incase DSRL throws the following error: PermissionError: [Errno 13] Permission d
 export DSRL_DATASET_DIR="path"
 mkdir -p "path"
 '''
+Incase you face other issues while running the training script due to dataset issues, please refer to https://github.com/liuzuxin/DSRL 
 
 ## Citation
 If you use this code, please cite our paper:
 ```bibtex
-@article{your_paper_2024,
-  title={Learning Conservative Neural Control Barrier Functions from Offline Data},
-  author={Your Name and Coauthors},
-  journal={Conference/Journal Name},
-  year={2024}
+@article{tabbara2025learning,
+  title={Learning Neural Control Barrier Functions from Offline Data with Conservatism},
+  author={Tabbara, Ihab and Sibai, Hussein},
+  journal={arXiv preprint arXiv:2505.00908},
+  year={2025}
 }
 ```
 
