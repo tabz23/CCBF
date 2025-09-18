@@ -28,7 +28,7 @@ python -c 'import torch; import gymnasium; import cvxpy; print("Installation suc
 
 
 
-## Reproduce paper results of the paper.
+## Reproduce main results of the paper.
 ```bash
 # Hopper BC
 python "examples/research/check/hopper_random/eval_bc_cbf_modif_list.py" --path "logs/OfflineHopperVelocityGymnasium-v1-cost-20/BC-all_cost20_seed10-0912"  --eval_episode 20 --device cpu
