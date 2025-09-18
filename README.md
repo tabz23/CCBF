@@ -25,19 +25,15 @@ conda activate CCBF
 python -c "import torch; import gymnasium; import cvxpy; print('Installation successful!')"
 ```
 
-### Step 4: Run the Code
+
+
+## Reproduce paper results
 ```bash
-# Replace with your main script name
-python main.py
-
-# Or if you have a specific training script
-python train_ccbf.py
-
-# Or if you have Jupyter notebooks
-jupyter notebook
+# Example command to run training (adjust as needed)
+python train_ccbf.py --env_name SafetyPointGoal1-v0 --epochs 100 --lr 0.001
 ```
 
-## Quick Start Example
+## Train CCBF in hopper and Swimmer
 ```bash
 # Example command to run training (adjust as needed)
 python train_ccbf.py --env_name SafetyPointGoal1-v0 --epochs 100 --lr 0.001
