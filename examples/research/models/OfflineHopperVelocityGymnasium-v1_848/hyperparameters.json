@@ -1,0 +1,23 @@
+{
+    "task": "OfflineHopperVelocityGymnasium-v1",
+    "seed": 7,
+    "cbf_hidden_dim": 128,
+    "dynamics_hidden_dim": 128,
+    "cbf_num_layers": 4,
+    "dynamics_num_layers": 4,
+    "batch_size": 256,
+    "learning_rate": 1e-05,
+    "dynamics_learning_rate": 0.0001,
+    "eps_safe": 0.08,
+    "eps_unsafe": 0.15,
+    "eps_grad": 0.02,
+    "w_safe": 1,
+    "w_unsafe": 1.2,
+    "w_grad": 2,
+    "train_dynamics": true,
+    "dt": 0.1,
+    "num_action": 3,
+    "state_dim": 11,
+    "best_safe acc": 0.9743995189666748,
+    "best_unsafe_acc": 0.9376170843839645
+}
