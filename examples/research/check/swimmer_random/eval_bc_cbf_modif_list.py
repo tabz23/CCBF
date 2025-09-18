@@ -128,7 +128,7 @@ if __name__ == "__main__":
     eval()
 
 '''
-python "/Users/i.k.tabbara/Documents/python directory/CCBF/OSRL/examples/research/check/swimmer_random/eval_bc_cbf_modif_list.py" --device="mps" --path "logs/OfflineSwimmerVelocityGymnasium-v1-cost-20/BC-all_cost20-d567/BC-all_cost20-d567"  --eval_episode 20 --device cpu
+python "examples/research/check/swimmer_random/eval_bc_cbf_modif_list.py" --device="mps" --path "logs/OfflineSwimmerVelocityGymnasium-v1-cost-20/BC-all_cost20-d567/BC-all_cost20-d567"  --eval_episode 20 --device cpu
 swimmer BC
 
 Group idbf (Models 1-3):
