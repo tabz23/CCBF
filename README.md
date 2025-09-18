@@ -22,7 +22,7 @@ pip install -e .
 
 ### Step 3: Verify Installation
 ```bash
-# Test that key packages are installed correctly
+# Test that key packages are installed correctly. This was tested on both Linux and macOS and is functioning as of september 18 2025
 python -c 'import torch; import gymnasium; import cvxpy; print("Installation successful!")'
 ```
 
