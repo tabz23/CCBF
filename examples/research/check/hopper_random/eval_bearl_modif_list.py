@@ -34,7 +34,7 @@ def eval(args: EvalConfig):
       #idbf
     "examples/research/models/OfflineHopperVelocityGymnasium-v1_271/combined_model.pth",
     "examples/research/models/OfflineHopperVelocityGymnasium-v1_209/combined_model.pth",
-    "examples/research/models/OfflineHopperVelocityGymnasium-v1_693/combined_model.pth",##replace later
+    "examples/research/models/OfflineHopperVelocityGymnasium-v1_693/combined_model.pth",
     # ##ccbf
     "examples/research/models/OfflineHopperVelocityGymnasium-v1_848/combined_model.pth",
     "examples/research/models/OfflineHopperVelocityGymnasium-v1_703/combined_model_laststep.pth",
