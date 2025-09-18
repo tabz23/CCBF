@@ -37,22 +37,20 @@ def eval(args: EvalConfig):
     
     model_paths = [
         ###idbf
-        "examples/research/models/OfflineSwimmerVelocityGymnasium-v1_269/combined_model.pth",#"best_safe acc": 0.9791599869728088,"best_unsafe_acc": 0.8777299463748932
-        "examples/research/models/OfflineSwimmerVelocityGymnasium-v1_481/combined_model.pth",#"best_safe acc": 0.9478048920631409,"best_unsafe_acc": 0.84089315533638
-        "examples/research/models/OfflineSwimmerVelocityGymnasium-v1_576/combined_model.pth",#"best_safe acc": 0.9485815405845642,"best_unsafe_acc": 0.8504167705774307
+        "examples/research/models/OfflineSwimmerVelocityGymnasium-v1_269/combined_model.pth",
+        "examples/research/models/OfflineSwimmerVelocityGymnasium-v1_481/combined_model.pth",
+        "examples/research/models/OfflineSwimmerVelocityGymnasium-v1_576/combined_model.pth",
 
         ###CCBF
-        "examples/research/models/OfflineSwimmerVelocityGymnasium-v1_784/combined_model.pth",##    "best_safe acc": 0.764591982960701, "best_unsafe_acc": 0.974375969171524
-        "examples/research/models/OfflineSwimmerVelocityGymnasium-v1_932/combined_model.pth",##    "best_safe acc": 0.7573345065116882,"best_unsafe_acc": 0.9764593034982681
-        "examples/research/models/OfflineSwimmerVelocityGymnasium-v1_709/combined_model.pth",##     "best_safe acc": 0.758169686794281, "best_unsafe_acc": 0.974375969171524
+        "examples/research/models/OfflineSwimmerVelocityGymnasium-v1_784/combined_model.pth",
+        "examples/research/models/OfflineSwimmerVelocityGymnasium-v1_932/combined_model.pth",
+        "examples/research/models/OfflineSwimmerVelocityGymnasium-v1_709/combined_model.pth",
         
         ###CBF
-        "examples/research/models/OfflineSwimmerVelocityGymnasium-v1_933/combined_model.pth",    #"best_safe acc": 0.9614395439624787, "best_unsafe_acc": 0.9082919180393219
-        "examples/research/models/OfflineSwimmerVelocityGymnasium-v1_278/combined_model.pth",    #"best_safe acc": 0.9791599869728088, "best_unsafe_acc": 0.8777299463748932
-        "examples/research/models/OfflineSwimmerVelocityGymnasium-v1_619/combined_model.pth",    #"best_safe acc": 0.974046328663826,"best_unsafe_acc": 0.8911491602659225
+        "examples/research/models/OfflineSwimmerVelocityGymnasium-v1_933/combined_model.pth",  
+        "examples/research/models/OfflineSwimmerVelocityGymnasium-v1_278/combined_model.pth",   
+        "examples/research/models/OfflineSwimmerVelocityGymnasium-v1_619/combined_model.pth",  
     ]
-    
-    
     for i, model_path in enumerate(model_paths):
         # print(f"\n[{i+1}/{len(model_paths)}] Evaluating model: {os.path.basename(os.path.dirname(model_path))}")
     
