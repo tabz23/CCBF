@@ -1,4 +1,4 @@
-name: OSRLCLONE
+name: CCBF
 channels:
   - defaults
   - conda-forge
