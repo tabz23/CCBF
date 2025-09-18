@@ -15,5 +15,7 @@
     "w_unsafe": 1.2,
     "w_grad": 2,
     "train_dynamics": true,
-    "dt": 0.1
+    "dt": 0.1,
+    "num_action": 3,
+    "state_dim": 11
 }
