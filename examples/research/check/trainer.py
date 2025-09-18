@@ -238,15 +238,15 @@ loss_grad_vector.shape torch.Size([128, 1])
         for step in range(self.eval_steps):
             batch = next(valloader_iter)
             observations, next_observations, actions, _, costs, done = [b.to(torch.float32).to(self.device) for b in batch]
-            debug_results = self.debug_action_coherence([observations, next_observations, actions, _, costs, done])#added this now for debugging
+            debug_results = self.debug_action_coherence([observations, next_observations, actions, _, costs, done])
             
             if self.train_dynamics:
-                loss_safe, loss_unsafe, loss_grad,loss_cql, dynamics_loss, avg_safe_B, avg_unsafe_B, safe_acc, unsafe_acc, avg_random_cbf = self.compute_loss(  # - added avg_random_cbf
+                loss_safe, loss_unsafe, loss_grad,loss_cql, dynamics_loss, avg_safe_B, avg_unsafe_B, safe_acc, unsafe_acc, avg_random_cbf = self.compute_loss( 
                     observations, next_observations, actions, costs, training_bool=False
                 )
                 total_dynamics_loss += dynamics_loss
             else:
-                loss_safe, loss_unsafe, loss_grad, loss_cql, avg_safe_B, avg_unsafe_B, safe_acc, unsafe_acc, avg_random_cbf = self.compute_loss(  # - added avg_random_cbf
+                loss_safe, loss_unsafe, loss_grad, loss_cql, avg_safe_B, avg_unsafe_B, safe_acc, unsafe_acc, avg_random_cbf = self.compute_loss( 
                     observations, next_observations, actions, costs, training_bool=False
                 )
             
@@ -270,7 +270,7 @@ loss_grad_vector.shape torch.Size([128, 1])
         avg_unsafe_B = total_avg_unsafe_B / self.eval_steps
         avg_random_cbf = total_avg_random_cbf / self.eval_steps  #
         
-        total_cbf_loss = avg_loss_safe + avg_loss_unsafe + avg_loss_grad #+ avg_loss_cql##TODO ADD HERE LIPCHITZ LOSS 
+        total_cbf_loss = avg_loss_safe + avg_loss_unsafe + avg_loss_grad #+ avg_loss_cql
         total_loss = total_cbf_loss + (avg_dynamics_loss if self.train_dynamics else 0.0)
         
         avg_safe_acc = total_safe_acc / self.eval_steps
@@ -614,4 +614,4 @@ if __name__ == "__main__":
     
 
 # python examples/research/check/trainer.py --task OfflineHopperVelocityGymnasium-v1  --cql 0.1 --temp 1 --detach True --batch_size 256 --device="mps" --num_action_samples_cql 10 --seed 7 --train_steps 50000 --w_grad 2
-# python examples/research/check/trainer.py --task OfflineSwimmerVelocityGymnasium-v1  --cql 1 --temp 1 --detach True --batch_size 256 --device="mps" --num_action_samples_cql 10 --seed 7 --w_grad 2 --train_steps 15000
+# python examples/research/check/trainer.py --task OfflineSwimmerVelocityGymnasium-v1  --cql 1 --temp 0.5 --detach True --batch_size 256 --device="mps" --num_action_samples_cql 10 --seed 7 --w_grad 2 --train_steps 15000
