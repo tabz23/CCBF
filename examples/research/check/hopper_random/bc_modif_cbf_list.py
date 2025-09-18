@@ -106,7 +106,7 @@ class BCTrainer:
         self.cost_limit = cost_limit
         self.model.setup_optimizers(actor_lr)
         
-        ###new code ###new code ###new code ###new code ###new code ###new code ###new code
+       
         with open(hyperparams_path, 'r') as f:
             hyperparams = json.load(f)
 
@@ -129,7 +129,7 @@ class BCTrainer:
         self.combinedcbfdynamics.eval()
         # print("loaded cbf")
 
-         ###new code ###new code ###new code ###new code ###new code ###new code ###new code
+       
 
     def set_target_cost(self, target_cost):
         self.cost_limit = target_cost
@@ -208,7 +208,7 @@ class BCTrainer:
                 cbf_lie_derivative = torch.einsum("bs,bs->b", f, gradient_B)
                 
                 # Add gamma(B(x)) term
-                right_side = cbf_lie_derivative + h_x_tensor.squeeze(-1)###CHANGE ALPHA HERE CHANGE ALPHA HERE.  LOW ALPHA->SAFER, WORSE REWARD
+                right_side = cbf_lie_derivative + h_x_tensor.squeeze(-1)
                 right_numpy = right_side.detach().cpu().numpy()
                 
                 # Calculate ∇B(x)g(x) for the control input term

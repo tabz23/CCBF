@@ -374,7 +374,7 @@ class COptiDICETrainer:
                 cbf_lie_derivative = torch.einsum("bs,bs->b", f, gradient_B)
                 
                 # Add gamma(B(x)) term
-                right_side = cbf_lie_derivative + h_x_tensor.squeeze(-1)###CHANGE ALPHA HERE CHANGE ALPHA HERE.  LOW ALPHA->SAFER, WORSE REWARD
+                right_side = cbf_lie_derivative + h_x_tensor.squeeze(-1)
                 right_numpy = right_side.detach().cpu().numpy()
                 
                 # Calculate ∇B(x)g(x) for the control input term
@@ -401,7 +401,7 @@ class COptiDICETrainer:
                     if prob.status in ["optimal", "optimal_inaccurate"]:
                         safe_action = u.value
                     else:
-                        print(f"Warning: QP at step {step} could not find optimal solution (status: {prob.status}), using nominal action")##I COMMENTED THIS OUT FOR NOW
+                        print(f"Warning: QP at step {step} could not find optimal solution (status: {prob.status}), using nominal action")
                         safe_action = nominal_action
                 except Exception as e:
                     print(f"Error in QP solver at step {step}: {e}")
@@ -416,7 +416,7 @@ class COptiDICETrainer:
             
             # Apply safe action to environment
             if cbf:
-                obs_next, reward, terminated, truncated, info = self.env.step(safe_action)#CHANGE HERE TO NOMINAL OR SAFE#CHANGE HERE TO NOMINAL OR SAFE#CHANGE HERE TO NOMINAL OR SAFE
+                obs_next, reward, terminated, truncated, info = self.env.step(safe_action)
             else:
                 obs_next, reward, terminated, truncated, info = self.env.step(nominal_action)
             costs_history.append(info["cost"])

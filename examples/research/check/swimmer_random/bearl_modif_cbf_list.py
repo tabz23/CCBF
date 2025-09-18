@@ -493,7 +493,7 @@ class BEARLTrainer:
                 cbf_lie_derivative = torch.einsum("bs,bs->b", f, gradient_B)
                 
                 # Add gamma(B(x)) term
-                right_side = cbf_lie_derivative + h_x_tensor.squeeze(-1)###CHANGE ALPHA HERE CHANGE ALPHA HERE.  LOW ALPHA->SAFER, WORSE REWARD
+                right_side = cbf_lie_derivative + h_x_tensor.squeeze(-1)
                 right_numpy = right_side.detach().cpu().numpy()
                 
                 # Calculate ∇B(x)g(x) for the control input term
@@ -535,7 +535,7 @@ class BEARLTrainer:
             
             # Apply safe action to environment
             if cbf:
-                obs_next, reward, terminated, truncated, info = self.env.step(safe_action)#CHANGE HERE TO NOMINAL OR SAFE#CHANGE HERE TO NOMINAL OR SAFE#CHANGE HERE TO NOMINAL OR SAFE
+                obs_next, reward, terminated, truncated, info = self.env.step(safe_action)
             else:
                 obs_next, reward, terminated, truncated, info = self.env.step(nominal_action)
             costs_history.append(info["cost"])
