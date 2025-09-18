@@ -38,6 +38,12 @@ python train_ccbf.py --env_name SafetyPointGoal1-v0 --epochs 100 --lr 0.001
 # Example command to run training (adjust as needed)
 python train_ccbf.py --env_name SafetyPointGoal1-v0 --epochs 100 --lr 0.001
 ```
+## Debug
+Incase DSRL throws the following error: PermissionError: [Errno 13] Permission denied: '/home/...'
+'''bash
+export DSRL_DATASET_DIR="path"
+mkdir -p "path"
+'''
 
 ## Citation
 If you use this code, please cite our paper:
