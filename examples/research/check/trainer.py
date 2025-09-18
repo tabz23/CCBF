@@ -408,7 +408,7 @@ loss_grad_vector.shape torch.Size([128, 1])
                 if "Hopper" in self.args.task:
                     thresh=0.86
                 else:
-                    thresh=0.7
+                    thresh=0.8
                 print("thresh",thresh)
                 if (total_eval_loss < lowest_eval_loss) and (val_avg_safe_acc>thresh) and (val_avg_unsafe_acc>thresh):
                     lowest_eval_loss = total_eval_loss
@@ -436,8 +436,8 @@ loss_grad_vector.shape torch.Size([128, 1])
                             "dt": self.dt,
                             "num_action":self.args.num_action,
                             "state_dim":self.args.state_dim,
-                            "best_safe acc":val_avg_safe_acc,
-                            "best_unsafe_acc":val_avg_unsafe_acc
+                            "final_safe acc":val_avg_safe_acc,
+                            "final_unsafe_acc":val_avg_unsafe_acc
                         }
                     hyperparameters_path = os.path.join(base_path, "hyperparameters.json") #f"
                     # Save the hyperparameters to a JSON file
