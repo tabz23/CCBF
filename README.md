@@ -55,9 +55,11 @@ python "examples/research/check/Swimmer_random/eval_coptidice_modif_list.py" --p
 
 ## Train CCBF in Safety Gymnasium 
 ```bash
+#The training script uses Wandb for logging metrics.
 python examples/research/check/trainer.py --task OfflineHopperVelocityGymnasium-v1  --device="cuda" --cql 0.1 --temp 1 --detach True --batch_size 256  --num_action_samples_cql 10 --seed 7 --train_steps 50000 --w_grad 2
 python examples/research/check/trainer.py --task OfflineSwimmerVelocityGymnasium-v1  --device="cuda" --cql 1 --temp 0.5 --detach True --batch_size 256  --num_action_samples_cql 10 --seed 7 --w_grad 2 --train_steps 15000
 ```
+
 ## Debug
 Incase DSRL throws the following error: PermissionError: [Errno 13] Permission denied: '/home/...' 
 ```bash
