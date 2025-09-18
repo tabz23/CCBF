@@ -70,7 +70,7 @@ Incase you face other issues while running the training script due to dataset do
 We have also uploaded the datasets online (https://limewire.com/d/R3dC5#8sa8LzaziD). After downloading, you can manually move the datasets into ```DSRL_DATASET_DIR``` directory
 
 ## Citation
-If you use this code, please cite our paper:
+If you find this code helpful, please consider citing our work!
 ```bibtex
 @article{tabbara2025learning,
   title={Learning Neural Control Barrier Functions from Offline Data with Conservatism},
