@@ -72,11 +72,14 @@ We have also uploaded the datasets online (https://limewire.com/d/R3dC5#8sa8Lzaz
 ## Citation
 If you find this code helpful, please consider citing our work!
 ```bibtex
-@article{tabbara2025learning,
-  title={Learning Neural Control Barrier Functions from Offline Data with Conservatism},
-  author={Tabbara, Ihab and Sibai, Hussein},
-  journal={arXiv preprint arXiv:2505.00908},
-  year={2025}
+@misc{tabbara2025learningconservativeneuralcontrol,
+      title={Learning Conservative Neural Control Barrier Functions from Offline Data}, 
+      author={Ihab Tabbara and Hussein Sibai},
+      year={2025},
+      eprint={2505.00908},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2505.00908}, 
 }
 ```
 
