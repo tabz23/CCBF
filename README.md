@@ -31,7 +31,6 @@ python -c 'import torch; import gymnasium; import cvxpy; print("Installation suc
 ## Reproduce main results of the paper.
 ```bash
 ##Note that checkpoints for learned neural CBFs using different methods (NCBF, CCBF, iDBF) + reference policies are already included in the github repository.
-##Each command loads 3 different checkpoints for each of (NCBF, CCBF, iDBF) and evaluates them for 20 episodes each when paired with the reference policy as a safety filter. The average normalized cost+reward are reported in the end.
 # Hopper BC
 python "examples/research/check/hopper_random/eval_bc_cbf_modif_list.py" --path "logs/OfflineHopperVelocityGymnasium-v1-cost-20/BC-all_cost20_seed10-0912"  --eval_episode 20 --device cpu
 # Hopper BC-Safe
