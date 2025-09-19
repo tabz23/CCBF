@@ -67,7 +67,6 @@ export DSRL_DATASET_DIR="path"
 mkdir -p "path"
 ```
 Incase you face other issues while running the training script due to dataset download issues, please refer to https://github.com/liuzuxin/DSRL.
-We have also uploaded the datasets online (https://limewire.com/d/R3dC5#8sa8LzaziD). After downloading, you can manually move the datasets into ```DSRL_DATASET_DIR``` directory
 
 ## Citation
 If you find this code helpful, please consider citing our work!
